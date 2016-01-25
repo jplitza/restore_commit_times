@@ -11,7 +11,7 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
 
 setup(
     name='restore_commit_times',
-    version='0.2',
+    version='0.3',
     description='Restore files mtime from Git commit times',
     long_description=long_description,
     author='Andrew Grigorev',
@@ -19,7 +19,13 @@ setup(
     url='https://github.com/ei-grad/restore_commit_times',
     py_modules='restore_commit_times',
     install_requires=['gitpython'],
+    license='GPLv3+',
+    keywords='git docker',
     classifiers=[
+        'Intended Audience :: Developers',
+        'Topic :: Software Development :: Pre-processors',
+        'Topic :: Software Development :: Build Tools',
+        'Topic :: Software Development :: Version Control',
         'License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)',
         'Programming Language :: Python :: 2',
         'Programming Language :: Python :: 3',

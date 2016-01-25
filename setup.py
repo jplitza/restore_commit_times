@@ -19,6 +19,11 @@ setup(
     url='https://github.com/ei-grad/restore_commit_times',
     py_modules='restore_commit_times',
     install_requires=['gitpython'],
+    classifiers=[
+        'License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)',
+        'Programming Language :: Python :: 2',
+        'Programming Language :: Python :: 3',
+    ],
     entry_points={
         'console_scripts': [
             'restore_commit_times=restore_commit_times:main',

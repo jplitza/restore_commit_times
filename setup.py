@@ -18,6 +18,7 @@ setup(
     author_email='andrew@ei-grad.ru',
     url='https://github.com/ei-grad',
     py_modules='restore_commit_times',
+    install_requires=['gitpython'],
     entry_points={
         'console_scripts': [
             'restore_commit_times=restore_commit_times:main',

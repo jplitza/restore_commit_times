@@ -1,6 +1,12 @@
 #!/usr/bin/env python
 # encoding: utf-8
 
+"""Restore files mtime from Git commit times
+
+    Usage: %s <repo1> [<repo2>]
+
+"""
+
 import logging
 import os
 import sys
@@ -58,7 +64,13 @@ def restore_commit_times(path):
 
 
 def main():
+
     logging.basicConfig(level=logging.DEBUG, format="%(message)s")
+
+    if len(sys.argv) < 2:
+        sys.stderr.write(__doc__ % sys.argv[0])
+        return 1
+
     for path in sys.argv[1:]:
         restore_commit_times(path)
 

@@ -1,11 +1,10 @@
+from codecs import open
 from os import path
-from distutils.core import setup
+from setuptools import setup
 
-
-here = path.abspath(path.dirname(__file__))
 
 # Get the long description from the README file
-
+here = path.abspath(path.dirname(__file__))
 with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
     long_description = f.read()
 
@@ -17,7 +16,7 @@ setup(
     author='Andrew Grigorev',
     author_email='andrew@ei-grad.ru',
     url='https://github.com/ei-grad/restore_commit_times',
-    py_modules='restore_commit_times',
+    py_modules=['restore_commit_times'],
     install_requires=['gitpython'],
     license='GPLv3+',
     keywords='git docker',

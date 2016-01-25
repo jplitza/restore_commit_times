@@ -11,12 +11,12 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
 
 setup(
     name='restore_commit_times',
-    version='0.1',
+    version='0.2',
     description='Restore files mtime from Git commit times',
     long_description=long_description,
     author='Andrew Grigorev',
     author_email='andrew@ei-grad.ru',
-    url='https://github.com/ei-grad',
+    url='https://github.com/ei-grad/restore_commit_times',
     py_modules='restore_commit_times',
     install_requires=['gitpython'],
     entry_points={

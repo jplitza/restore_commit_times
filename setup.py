@@ -10,7 +10,7 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
 
 setup(
     name='restore_commit_times',
-    version='0.4',
+    version='0.5',
     description='Restore files mtime from Git commit times',
     long_description=long_description,
     author='Andrew Grigorev',

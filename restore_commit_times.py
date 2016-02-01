@@ -3,7 +3,7 @@
 
 """Restore files mtime from Git commit times
 
-    Usage: %s <repo1> [<repo2>]
+    Usage: %s [-q] <repo1> [<repo2>]
 
 """
 
@@ -18,7 +18,7 @@ log = logging.getLogger(__name__)
 
 def restore_commit_times(path):
 
-    log.info("Restoring file mtimes for path: %s", path)
+    log.debug("Restoring file mtimes for path: %s", path)
 
     def walk(tree):
         ret = list()
@@ -65,7 +65,11 @@ def restore_commit_times(path):
 
 def main():
 
-    logging.basicConfig(level=logging.DEBUG, format="%(message)s")
+    if '-q' in sys.argv:
+        logging.basicConfig(level=logging.INFO, format="%(message)s")
+        sys.argv.remove('-q')
+    else:
+        logging.basicConfig(level=logging.DEBUG, format="%(message)s")
 
     if len(sys.argv) < 2:
         sys.stderr.write(__doc__ % sys.argv[0])

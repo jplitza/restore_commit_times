@@ -53,14 +53,20 @@ def restore_commit_times(path):
     for i, mtime in find_mtimes(repo).items():
         fname = os.path.join(path, i)
         log.debug("%s %s", mtime, fname)
-        os.utime(fname, (mtime, mtime), follow_symlinks=False)
+        try:
+            os.utime(fname, (mtime, mtime), follow_symlinks=False)
+        except TypeError:
+            os.utime(fname, (mtime, mtime))
 
     for sm in repo.submodules:
         sm_repo = git.Repo(os.path.join(repo.git_dir, 'modules', sm.name))
         for i, mtime in find_mtimes(sm_repo).items():
             fname = os.path.join(path, sm.path, i)
             log.debug("%s %s", mtime, fname)
-            os.utime(fname, (mtime, mtime), follow_symlinks=False)
+            try:
+                os.utime(fname, (mtime, mtime), follow_symlinks=False)
+            except TypeError:
+                os.utime(fname, (mtime, mtime))
 
 
 def main():
